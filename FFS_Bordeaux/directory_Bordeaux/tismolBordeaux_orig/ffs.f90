@@ -6,7 +6,7 @@ contains
   !BS------------------------------------
   subroutine runffs(startpoint,ffsparam,syst,pot,dyn,output,timestep,NCYC)
   use types;use assign_objects;use alloc_objects
-  use transstep
+  !use transstep
   !use ffsstep
   use mdstep
   use orderparameter
@@ -64,10 +64,10 @@ contains
     iselect=int(ffsparam%nstartpoints*ran)+1
     phasepoint%phasexv%x=ffsparam%startpoints(iselect,1) 
     phasepoint%phasexv%v=ffsparam%startpoints(iselect,2)
-    call make_transstep(icyc,phasepoint,phasepoint2,syst,pot,dyn,output,&
-                        timestep,interfaceL,interfaceM,interfaceR,&
-                        transalgorithm,two_point_method,& 
-                        wp1,wp2,wp3,wt1,wt2)
+    !call make_transstep(icyc,phasepoint,phasepoint2,syst,pot,dyn,output,&
+    !                    timestep,interfaceL,interfaceM,interfaceR,&
+    !                    transalgorithm,two_point_method,& 
+    !                    wp1,wp2,wp3,wt1,wt2)
 
     if (TISMOLEXIT) then
       print *,"NOTICING TISEXIT FILE: SOFT EXIT"
